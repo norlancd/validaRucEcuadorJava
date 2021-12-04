@@ -11,11 +11,15 @@ package valida_ruc_ecuador;
  */
 public class SharedMethods {
 
-    public static boolean ValidateInRanges(String ruc, int valueInitPos, int valueLastPos, String valueRanges, String validationName) {
+    public static boolean ValidateInNumericRanges(String data, int position, int characters, String ranges) {
+        return ValidateInNumericRanges(data, position, characters, ranges, "El valor");
+    }
+
+    public static boolean ValidateInNumericRanges(String data, int position, int characters, String ranges, String validationName) {
         try {
-            String valueDigits = ruc.substring(valueInitPos, valueInitPos + valueLastPos);
+            String valueDigits = data.substring(position, position + characters);
             int value = Integer.parseInt(valueDigits);
-            String[] acceptedValues = valueRanges.split(";");
+            String[] acceptedValues = ranges.split(";");
 
             for (int i = 0; i < acceptedValues.length; i++) {
                 String[] range = acceptedValues[i].split("-");
@@ -25,9 +29,10 @@ public class SharedMethods {
                     return true;
                 }
             }
-            System.out.println(String.format("%1$s debe estar dentro de los rangos aceptados [%2$s]", validationName, valueRanges));
+            System.out.println(String.format("%1$s debe estar dentro de los rangos aceptados [%2$s]", validationName, ranges));
             return false;
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
+            System.out.println(String.format("%1$s [%2$s]", "Excepción", e.toString()));
             return false;
         }
     }

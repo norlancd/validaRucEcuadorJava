@@ -11,7 +11,7 @@ package valida_ruc_ecuador;
  */
 public class Contants {
 
-    public class VATLength {
+    public class RucValidations {
 
         public static final int LENGTH_RUC = 13;
         public static final String BIN_VALIDATOR_DIGIT = "0-6;9-9";
@@ -19,7 +19,7 @@ public class Contants {
         public static final String BIN_LAST_DIGITS_RUC = "001-999";
     }  
 
-    public class RegularExpression {       
+    public class RegularExpressions {       
 
         public static final String NUMBERS = "\\d";
         public static final String LETTERS_NUMBERS = "^[a-zA-Z0-9]+$";

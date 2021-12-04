@@ -18,8 +18,11 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String ruc = "1791288106001";
+        
+        String ruc = "1791245606001";
+        
         boolean valid = ValidateRUC(ruc);
+        
         if (valid) {
             System.out.println(String.format("El RUC %1$s es válido", ruc));
         } else {
