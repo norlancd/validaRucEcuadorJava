@@ -11,13 +11,13 @@ package valida_ruc_ecuador;
  */
 public class SharedMethods {
 
-    public static boolean ValidateInNumericRanges(String data, int position, int characters, String ranges) {
-        return ValidateInNumericRanges(data, position, characters, ranges, "El valor");
+    public static boolean ValidateInNumericRanges(String data, int valueStartIndex, int valueLength, String ranges) {
+        return ValidateInNumericRanges(data, valueStartIndex, valueLength, ranges, "El valor");
     }
 
-    public static boolean ValidateInNumericRanges(String data, int position, int characters, String ranges, String validationName) {
+    public static boolean ValidateInNumericRanges(String data, int valueStartIndex, int valueLength, String ranges, String validationName) {
         try {
-            String valueDigits = data.substring(position, position + characters);
+            String valueDigits = data.substring(valueStartIndex, valueStartIndex + valueLength);
             int value = Integer.parseInt(valueDigits);
             String[] acceptedValues = ranges.split(";");
 
