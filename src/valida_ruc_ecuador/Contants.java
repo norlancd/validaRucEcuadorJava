@@ -15,8 +15,8 @@ public class Contants {
 
         public static final int LENGTH_RUC = 13;
         public static final String BIN_VALIDATOR_DIGIT = "0-6;9-9";
-        public static final String BIN_NUMBER_OF_PROVINCES = "01-24;31-31;80-85";
-        public static final String BIN_LAST_DIGITS_RUC = "001-999";
+        public static final String BIN_NUMBER_OF_PROVINCES = "01-24;30-31;80-85";
+        public static final String BIN_LAST_DIGITS_RUC = "000-999";
     }  
 
     public class RegularExpressions {       
